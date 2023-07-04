@@ -8,7 +8,7 @@ Using the same scripts as Azure
       1) add SSH inbound rule
       2) add port *27017* inbound rule
          
-         ![db_inbound_rule](db_inbound_rule.png)
+         ![db_inbound_rule](screenshots/db_inbound_rule.png)
 
 2) Run db script
 3) Check status of MongoDB and bindIP
@@ -20,7 +20,7 @@ Using the same scripts as Azure
       1) add SSH inbound rule
       2) add port *3000* inbound rule
    
-         ![app_inbound_rule](app_inbound_rule.png)
+         ![app_inbound_rule](screenshots/app_inbound_rule.png)
 
 2) Modify the script: *change DB_HOST to new db vm ip address*
 3) Set up reverse proxy

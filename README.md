@@ -43,7 +43,7 @@ For training, the region is in Ireland: eu-west-1
 
 ### Display of launching instance summary
 
-![vm_create](vm_create_sum.png)
+![vm_create](screenshots/vm_create_sum.png)
 
 
 ### Terminate EC2 Instances
@@ -65,13 +65,13 @@ User data runs as a root user. It only runs once: as soon as it's created, it wi
    3) advanced details: 
       * paste the database vm script on user data (donot need sudo commands)
    
-   ![user_data](user_data.png)
+         ![user_data](screenshots/user_data.png)
 
 2) on user data vm instance overview: action > image and templates > create image
    1) image name: *tech241-parichat-db-ami*
    2) add new tag: *Name:tech241-parichat-db-ami* 
 
-   ![create_ami](create_ami.png)
+      ![create_ami](screenshots/create_ami.png)
 
 #### After create ami
 
@@ -83,7 +83,7 @@ User data runs as a root user. It only runs once: as soon as it's created, it wi
    ```
    ssh -i "~/.ssh/tech241.pem" root@ec2-54-229-242-233.eu-west-1.compute.amazonaws.com
    ```
-   ![ssh_as_root](ssh_as_root.png)
+   ![ssh_as_root](screenshots/ssh_as_root.png)
 
    SSH in as user
    ```

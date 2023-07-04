@@ -7,7 +7,7 @@
    
    1) select: CPUUtilization  
    
-        ![select_metric](select_metric.png)
+        ![select_metric](screenshots/select_metric.png)
    
    2) Period: select time period
    
@@ -18,10 +18,15 @@
 
 ### Review and create alarm
 
-![createalarm](create_alarm.png)
+![createalarm](screenshots/create_alarm.png)
 
-![createalarm](create_alarm2.png)
+![createalarm](screenshots/create_alarm2.png)
 
 
 You can add the alarm to a or existing new dashboard
-1) Your alarm overview > action > add to dashboard 
+
+Your alarm overview > action > add to dashboard 
+![alarm_cpu_graph](screenshots/alarm_cpu_graph.png)
+
+### Notes
+https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/US_AlarmAtThresholdEC2.html 
