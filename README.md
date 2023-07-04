@@ -1,6 +1,15 @@
 ## What is DevOps?
 DevOps is a methodology that is introduced to bridge the gap between developers and operations. This is to improve the software development life cycle. It promotes the automation of processes that allows the team to build, test and release software efficiently and effectively.
 
+### Business values
+ultimate goal is to get the working software released to the end users
+* Release and deploy working software faster
+* Able to keep up with competitors
+* Continous improvement - able to recieve feedback and improve the software based on those feedback
+* Quality and reliability - able to resolve issues and debug quickly, ensuring higher software quality
+* Improve collaboration - enhances cross-functional team work
+* Flexibility
+
 ### *Note*
 *Make sure not to share or publish the aws credential or access keys, if discover that you intentially or unintentially leak those information, the company and you will get fined.*
 
@@ -40,3 +49,49 @@ For training, the region is in Ireland: eu-west-1
 ### Terminate EC2 Instances
 1) locate *instance state*
 2) select *teminate instance*
+
+### Create AMIs
+
+#### Why do we need amis
+* able to copy a vm quickly
+* cost less in term of set up and running than a new vm as it only takes disk image
+
+#### Set up user data vm
+User data runs as a root user. It only runs once: as soon as it's created, it will run. Also, if you turn off the vm and start up again, the script will not run again.
+
+1) create a *mongodb* vm
+   1) select ubuntu image
+   2) use the existing nsg 
+   3) advanced details: 
+      * paste the database vm script on user data (donot need sudo commands)
+   
+   ![user_data](user_data.png)
+
+2) on user data vm instance overview: action > image and templates > create image
+   1) image name: *tech241-parichat-db-ami*
+   2) add new tag: *Name:tech241-parichat-db-ami* 
+
+   ![create_ami](create_ami.png)
+
+#### After create ami
+
+3) launch instance with ami when ami status is ***available***
+  
+   when connect using ssh, ensure the path is *ubuntu* not *root*
+   
+   SSH in as root
+   ```
+   ssh -i "~/.ssh/tech241.pem" root@ec2-54-229-242-233.eu-west-1.compute.amazonaws.com
+   ```
+   ![ssh_as_root](ssh_as_root.png)
+
+   SSH in as user
+   ```
+   ssh -i "~/.ssh/tech241.pem" ubuntu@ec2-54-229-242-233.eu-west-1.compute.amazonaws.com
+   ```
+
+
+### IP address
+**Public IP address** - using public ip address, virtual machines that are in the same virtual network need to go through security group in order to communicate with a another virtual machine.
+
+**Private IP address** - using private ip address allows the virtual machines to communicate directly through network interface controller without having go through network security group
