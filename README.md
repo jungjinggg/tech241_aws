@@ -94,4 +94,11 @@ User data runs as a root user. It only runs once: as soon as it's created, it wi
 ### IP address
 **Public IP address** - using public ip address, virtual machines that are in the same virtual network need to go through security group in order to communicate with a another virtual machine.
 
-**Private IP address** - using private ip address allows the virtual machines to communicate directly through network interface controller without having go through network security group
+**Private IP address** - using private ip address allows the virtual machines to communicate directly through network interface controller without having go through network security group.
+
+### *Notes*
+#### Can we put the database vm ip adress into the URL?
+This would not work as when we set up the db vm, we we don't allow http or https to access our vm. However, even if we allow https and http, we still wouldn't able to get anything as we don't have nginx installed on the db vm.
+
+#### App vm ip address as env var 
+The env variable that we specify is DB_HOST, which is specifying the endpoint of where the app vm to get database from. Therefore, this would not work because the endpoint would be the app itself and there is no MongoDB running.
